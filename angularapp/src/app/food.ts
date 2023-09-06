@@ -1,4 +1,3 @@
-
 const foods: Object[] = [
     {
         name: "Milk",
