@@ -41,11 +41,11 @@ export class FoodListComponent implements OnInit {
 
     this.isEditing = true;
     this.newFoodName = "";
-    this.newFoodCalories = null;
+    this.newFoodCalories = 0;
     this.newFoodImage = "";
   }
 
-  addToMyList(food, quantityInput) {
+  addToMyList(food: { name: any; quantity: any; calories: any; image?: string; }, quantityInput: { value: any; }) {
     const existingFood = this.myList.find(item => item.name === food.name)
     const quantity = Number(quantityInput.value)
 
