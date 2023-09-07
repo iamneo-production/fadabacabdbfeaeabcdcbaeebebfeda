@@ -8,14 +8,14 @@ import foods from '../food';
 })
 export class FoodListComponent implements OnInit {
 
-  foods!: Object[];
+  foods: Object[];
   myList: { name: string, calories: number, quantity: number, image: string }[] = [];
-  pattern!: string;
+  pattern: string;
   isEditing: boolean = false;
   newFoodName: string = "Example Name";
   newFoodCalories: number = 250;
   newFoodImage: string = "https://imagefinder.co/storage/w1000/images/2019/02/freestocks_sandwich_3-1000x667.jpg";
-  quantity!: number;
+  quantity: number;
   totalCalories: number = 0;
 
 
@@ -41,11 +41,11 @@ export class FoodListComponent implements OnInit {
 
     this.isEditing = true;
     this.newFoodName = "";
-    this.newFoodCalories = 0;
+    this.newFoodCalories = null;
     this.newFoodImage = "";
   }
 
-  addToMyList(food: { name: any; quantity: any; calories: any; image?: string; }, quantityInput: { value: any; }) {
+  addToMyList(food, quantityInput) {
     const existingFood = this.myList.find(item => item.name === food.name)
     const quantity = Number(quantityInput.value)
 
